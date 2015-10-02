@@ -210,6 +210,8 @@ end
 function Perspective:Start()
     self.offsetLines = Options.db.profile[Options.profile].settings.offsetLines
     self.dottedLines = Options.db.profile[Options.profile].settings.dottedLines
+	-- Line toggle option
+	self.toggleLines = Options.db.profile[Options.profile].settings.toggleLines
 
     self.opacity = Options.db.profile[Options.profile].settings.convertedOpacity
 
@@ -480,7 +482,7 @@ function Perspective:DrawPixie(ui, unit, uPos, pPos, showItem, showLine, dottedL
     local pixieLocPoints = { 0, 0, 0, 0 }
 
     -- Draw the line first, if it needs to be drawn
-    if showLine then
+    if showLine and self.toggleLines then
         -- Get the unit's position and vector
         local pos = unit:GetPosition()
         local vec = Vector3.New(pos.x, pos.y, pos.z)

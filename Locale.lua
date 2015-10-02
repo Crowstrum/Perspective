@@ -318,7 +318,8 @@ function PerspectiveLocale:LoadLocalization()
     locale.UI_Settings_OffsetCheck_Tooltip          = "Offsets the lines so they do not overlay on top of your character."
     locale.UI_Settings_DottedLinesCheck_Text        = "Dotted Lines"
     locale.UI_Settings_DottedLinesCheck_Tooltip     = "Draw lines using dots."
-
+	locale.UI_Settings_ToggleLinesCheck_Text		= "Toggle Objective Lines"
+	locale.UI_Settings_ToggleLinesCheck_Tooltip		= "Turn line overlays on/off."
 
 
 

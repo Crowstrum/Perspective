@@ -187,6 +187,7 @@ function PerspectiveOptions:LoadDefaults()
                     max                                     = 10,
                     offsetLines                             = true,
                     dottedLines                             = false,
+					toggleLines								= true,
                     draw                                    = 0,
                     slow                                    = 1,
                     fast                                    = 100,
@@ -1217,7 +1218,8 @@ function PerspectiveOptions:LoadControls()
             CheckButtons                = {
                 DisableCheck            = { option = "disabled" },
                 OffsetCheck             = { option = "offsetLines" },
-                DottedLinesCheck        = { option = "dottedLines" } },
+                DottedLinesCheck        = { option = "dottedLines" },
+				ToggleLinesCheck	    = { option = "toggleLines" } },
             TextBoxes                   = {
                 MaxUnitsText            = { option = "max",         isNumber = true } },
             Sliders                     = {
@@ -2148,6 +2150,8 @@ function PerspectiveOptions:CheckButtonClickedSettings(handler, control, button)
         Perspective.offsetLines = val
     elseif data.options.option == "dottedLines" then
         Perspective.dottedLines = val
+	elseif data.options.option == "toggleLines" then
+        Perspective.toggleLines = val
     end
 end
 
